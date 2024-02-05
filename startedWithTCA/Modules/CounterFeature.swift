@@ -15,6 +15,7 @@ struct CounterFeature: Equatable {
 	   var count = 0
 	   var fact: String?
 	   var isLoading = false
+	   var isTimerRunning = false
     }
     
     enum Action {
@@ -23,7 +24,12 @@ struct CounterFeature: Equatable {
 	   case resetButtonTapped
 	   case factButtonTapped
 	   case factResponse(fact: String)
+	   case toggleTimer
+	   case timerTick
+	   case toggleTimerButtonTapped
     }
+    
+    enum CancelID { case timer }
     
     var body: some ReducerOf<Self> {
 	   Reduce { state, action in
@@ -43,6 +49,23 @@ struct CounterFeature: Equatable {
 		  case .factButtonTapped:
 			 state.fact = nil
 			 state.isLoading = true
+			 return .run { [count = state.count] send in
+				async {
+				    do {
+					   let (data, _) = try await URLSession.shared.data(from: URL(string: "http://numbersapi.com/\(count)")!)
+					   let fact = String(decoding: data, as: UTF8.self)
+					   
+					   await send(.factResponse(fact: fact))
+				    } catch {
+					   // Handle error
+					   print("Error fetching fact: \(error)")
+				    }
+				}
+			 }
+		  case .timerTick:
+			 state.count += 1
+			 state.fact = nil
+			 return .none
 			 
 			 return .run { [count = state.count] send in
 				let (data, _) = try await URLSession.shared
@@ -55,6 +78,32 @@ struct CounterFeature: Equatable {
 			 state.isLoading = false
 			 state.fact = fact
 			 return .none
+		  case .toggleTimer:
+			 state.isTimerRunning.toggle()
+			 return .run { send in
+				while true {
+				    try await Task.sleep(for: .seconds(1))
+				    await send(.timerTick)
+				}
+			 }
+		  case .timerTick:
+			 state.count += 1
+			 state.fact = nil
+			 return .none
+			 
+		  case .toggleTimerButtonTapped:
+			 state.isTimerRunning.toggle()
+			 if state.isTimerRunning {
+				return .run { send in
+				    while true {
+					   try await Task.sleep(for: .seconds(1))
+					   await send(.timerTick)
+				    }
+				}
+				.cancellable(id: CancelID.timer)
+			 } else {
+				return .cancel(id: CancelID.timer)
+			 }
 		  }
 	   }
     }
@@ -100,6 +149,15 @@ struct CounterView: View {
 				
 				
 			 }
+			 
+			 Button(viewStore.isTimerRunning ? "Stop timer" : "Start timer") {
+				viewStore.send(.toggleTimerButtonTapped)
+			 }
+			 .font(.largeTitle)
+			 .padding()
+			 .background(Color.black.opacity(0.1))
+			 .cornerRadius(10)
+			 
 			 Button("Fact") {
 				viewStore.send(.factButtonTapped)
 			 }

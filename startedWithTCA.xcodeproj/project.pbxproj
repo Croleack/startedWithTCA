@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E974B76C2B60E9D4002D3515 /* startedWithTCAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974B76B2B60E9D4002D3515 /* startedWithTCAApp.swift */; };
-		E974B76E2B60E9D4002D3515 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974B76D2B60E9D4002D3515 /* ContentView.swift */; };
 		E974B7702B60E9D6002D3515 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E974B76F2B60E9D6002D3515 /* Assets.xcassets */; };
 		E974B7732B60E9D6002D3515 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E974B7722B60E9D6002D3515 /* Preview Assets.xcassets */; };
 		E974B77D2B60E9D7002D3515 /* startedWithTCATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974B77C2B60E9D7002D3515 /* startedWithTCATests.swift */; };
@@ -36,10 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E92381242B68EAA500F25EBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E92381242B68EAA500F25EBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E974B7682B60E9D4002D3515 /* startedWithTCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = startedWithTCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E974B76B2B60E9D4002D3515 /* startedWithTCAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startedWithTCAApp.swift; sourceTree = "<group>"; };
-		E974B76D2B60E9D4002D3515 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E974B76F2B60E9D6002D3515 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E974B7722B60E9D6002D3515 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E974B7782B60E9D7002D3515 /* startedWithTCATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = startedWithTCATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +74,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E93551EC2B70B72000FB1EF8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E92381242B68EAA500F25EBC /* Info.plist */,
+				E974B76F2B60E9D6002D3515 /* Assets.xcassets */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E93551ED2B70B76F00FB1EF8 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E974B76B2B60E9D4002D3515 /* startedWithTCAApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		E974B75F2B60E9D4002D3515 = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +114,10 @@
 		E974B76A2B60E9D4002D3515 /* startedWithTCA */ = {
 			isa = PBXGroup;
 			children = (
-				E92381242B68EAA500F25EBC /* Info.plist */,
-				E974B7982B61013B002D3515 /* New Group */,
-				E974B76B2B60E9D4002D3515 /* startedWithTCAApp.swift */,
-				E974B76D2B60E9D4002D3515 /* ContentView.swift */,
-				E974B76F2B60E9D6002D3515 /* Assets.xcassets */,
+				E93551ED2B70B76F00FB1EF8 /* Application */,
+				E93551EC2B70B72000FB1EF8 /* Common */,
+				E974B7982B61013B002D3515 /* Modules */,
 				E974B7712B60E9D6002D3515 /* Preview Content */,
-				E974B7992B61015D002D3515 /* CounterFeature.swift */,
 			);
 			path = startedWithTCA;
 			sourceTree = "<group>";
@@ -135,11 +147,12 @@
 			path = startedWithTCAUITests;
 			sourceTree = "<group>";
 		};
-		E974B7982B61013B002D3515 /* New Group */ = {
+		E974B7982B61013B002D3515 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E974B7992B61015D002D3515 /* CounterFeature.swift */,
 			);
-			path = "New Group";
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,7 +292,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E974B79A2B61015D002D3515 /* CounterFeature.swift in Sources */,
-				E974B76E2B60E9D4002D3515 /* ContentView.swift in Sources */,
 				E974B76C2B60E9D4002D3515 /* startedWithTCAApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,7 +459,7 @@
 				DEVELOPMENT_TEAM = 36R3TYQTT7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = startedWithTCA/Info.plist;
+				INFOPLIST_FILE = startedWithTCA/Common/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -477,7 +489,7 @@
 				DEVELOPMENT_TEAM = 36R3TYQTT7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = startedWithTCA/Info.plist;
+				INFOPLIST_FILE = startedWithTCA/Common/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
