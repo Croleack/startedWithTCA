@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E93551EF2B70C03900FB1EF8 /* CounterFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93551EE2B70C03900FB1EF8 /* CounterFeatureTests.swift */; };
 		E974B76C2B60E9D4002D3515 /* startedWithTCAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974B76B2B60E9D4002D3515 /* startedWithTCAApp.swift */; };
 		E974B7702B60E9D6002D3515 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E974B76F2B60E9D6002D3515 /* Assets.xcassets */; };
 		E974B7732B60E9D6002D3515 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E974B7722B60E9D6002D3515 /* Preview Assets.xcassets */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		E92381242B68EAA500F25EBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E93551EE2B70C03900FB1EF8 /* CounterFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFeatureTests.swift; sourceTree = "<group>"; };
 		E974B7682B60E9D4002D3515 /* startedWithTCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = startedWithTCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E974B76B2B60E9D4002D3515 /* startedWithTCAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startedWithTCAApp.swift; sourceTree = "<group>"; };
 		E974B76F2B60E9D6002D3515 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +93,13 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		E93551F02B70C07E00FB1EF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E974B75F2B60E9D4002D3515 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +107,7 @@
 				E974B77B2B60E9D7002D3515 /* startedWithTCATests */,
 				E974B7852B60E9D7002D3515 /* startedWithTCAUITests */,
 				E974B7692B60E9D4002D3515 /* Products */,
+				E93551F02B70C07E00FB1EF8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				E974B77C2B60E9D7002D3515 /* startedWithTCATests.swift */,
+				E93551EE2B70C03900FB1EF8 /* CounterFeatureTests.swift */,
 			);
 			path = startedWithTCATests;
 			sourceTree = "<group>";
@@ -192,6 +203,8 @@
 				E974B77A2B60E9D7002D3515 /* PBXTargetDependency */,
 			);
 			name = startedWithTCATests;
+			packageProductDependencies = (
+			);
 			productName = startedWithTCATests;
 			productReference = E974B7782B60E9D7002D3515 /* startedWithTCATests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -301,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E974B77D2B60E9D7002D3515 /* startedWithTCATests.swift in Sources */,
+				E93551EF2B70C03900FB1EF8 /* CounterFeatureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
