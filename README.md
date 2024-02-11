@@ -8,3 +8,4 @@ This project is not a test task. This is an introduction to comprosable architec
 <img width="841" alt="Снимок экрана 2024-02-05 в 11 25 39" src="https://github.com/Croleack/startedWithTCA/assets/121854191/23cdb951-32de-4a2a-8699-2eb004b135cb">
 
 <img width="844" alt="Снимок экрана 2024-02-05 в 11 29 18" src="https://github.com/Croleack/startedWithTCA/assets/121854191/3f7f22b8-5f95-49d9-9bef-ca88c7d2e580">
+<img width="757" alt="Снимок экрана 2024-02-11 в 17 04 12" src="https://github.com/Croleack/startedWithTCA/assets/121854191/66e0aef8-1e66-438d-a454-f7bab0b0d922">
